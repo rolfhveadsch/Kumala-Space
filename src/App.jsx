@@ -7,7 +7,7 @@ import AuthGate from "./components/AuthGate";
 import PersonalSpace from "./components/PersonalSpace";
 import ParticleBackground from "./components/ParticleBackground";
 import PinGate from "./components/PinGate";
-import AntiCopy from "./components/AntiCopy";
+import ContentProtection from "./components/ContentProtection";
 import BirthdayNotification from "./components/BirthdayNotification";
 
 // ── Scene components ──────────────────────────────────────
@@ -37,7 +37,7 @@ function BirthdayFlow() {
   };
 
   return (
-    <AntiCopy className="w-full min-h-screen">
+    <ContentProtection showWarning={true} enabled={true}>
       <div id="birthday-18" className="birthday-page w-full min-h-screen flex items-center justify-center bg-[#000000] text-[#ededed] font-sans overflow-hidden">
         <ParticleBackground />
         <audio ref={audioRef} src="/soundtrack.mp3" loop />
@@ -51,7 +51,7 @@ function BirthdayFlow() {
           {scene === 7 && <Epilogue next={finishBirthday} />}
         </div>
       </div>
-    </AntiCopy>
+    </ContentProtection>
   );
 }
 
