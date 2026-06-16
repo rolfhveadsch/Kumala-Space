@@ -31,7 +31,6 @@ const Typewriter = ({ text, speed = 45, delayAfter = 3000, onComplete, onDoneTyp
       clearInterval(interval);
       if (timeoutId) clearTimeout(timeoutId);
     };
-    // exclude onDoneTyping from deps to avoid restarting when inline callbacks change
   }, [text, speed, delayAfter, suppressAutoAdvance]);
 
   return <span className={className}>{displayed}</span>;
@@ -91,7 +90,19 @@ function Epilogue({ next, nextButtonPosition = 'below', nextButtonsEnabled = fal
   const showTimerRef = useRef(null);
   const navigate = useNavigate();
 
-  const nextStep = () => setStep((s) => s + 1);
+  // Reset typed state dan cleanup timer saat step berganti
+  useEffect(() => {
+    setTyped(false);
+    return () => {
+      if (showTimerRef.current) clearTimeout(showTimerRef.current);
+      if (autoTimerRef.current) clearTimeout(autoTimerRef.current);
+    };
+  }, [step]);
+
+  const nextStep = () => {
+    setTyped(false); // reset sebelum ganti step
+    setStep((s) => s + 1);
+  };
 
   const handleFinish = () => {
     if (next) next();
@@ -117,16 +128,25 @@ function Epilogue({ next, nextButtonPosition = 'below', nextButtonsEnabled = fal
                 text={epilogueMessages[step].text}
                 speed={45}
                 delayAfter={epilogueMessages[step].delay}
+                suppressAutoAdvance={true}
                 onDoneTyping={() => {
                   if (showTimerRef.current) { clearTimeout(showTimerRef.current); showTimerRef.current = null; }
-                  showTimerRef.current = setTimeout(() => { showTimerRef.current = null; setTyped(true); }, 2500);
+
+                  // Tampilkan button 2500ms setelah typewriter selesai
+                  showTimerRef.current = setTimeout(() => {
+                    showTimerRef.current = null;
+                    setTyped(true);
+                  }, 2500);
+
                   if (autoTimerRef.current) { clearTimeout(autoTimerRef.current); autoTimerRef.current = null; }
                   const requiresNext = Boolean(epilogueMessages[step].nextButton?.required ?? nextButtonsEnabled);
                   if (!requiresNext) {
-                    autoTimerRef.current = setTimeout(() => { autoTimerRef.current = null; nextStep(); }, epilogueMessages[step].delay);
+                    autoTimerRef.current = setTimeout(() => {
+                      autoTimerRef.current = null;
+                      nextStep();
+                    }, epilogueMessages[step].delay);
                   }
                 }}
-                suppressAutoAdvance={true}
               />
 
               {/* per-message next button */}
@@ -140,7 +160,12 @@ function Epilogue({ next, nextButtonPosition = 'below', nextButtonsEnabled = fal
                       initial={{ opacity: 0, y: 10, scale: 0.98 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{ duration: 0.45, ease: 'easeOut' }}
-                      onClick={(e) => { e.stopPropagation(); if (showTimerRef.current) { clearTimeout(showTimerRef.current); showTimerRef.current = null; } if (autoTimerRef.current) { clearTimeout(autoTimerRef.current); autoTimerRef.current = null; } nextStep(); }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (showTimerRef.current) { clearTimeout(showTimerRef.current); showTimerRef.current = null; }
+                        if (autoTimerRef.current) { clearTimeout(autoTimerRef.current); autoTimerRef.current = null; }
+                        nextStep();
+                      }}
                       className="absolute top-2.5 right-2.5"
                     >
                       Next
@@ -149,8 +174,20 @@ function Epilogue({ next, nextButtonPosition = 'below', nextButtonsEnabled = fal
                 }
                 if (position !== 'overlay-right' && showNext) {
                   return (
-                    <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} className="flex justify-center mt-6">
-                      <GlitchButton onClick={(e) => { e.stopPropagation(); if (showTimerRef.current) { clearTimeout(showTimerRef.current); showTimerRef.current = null; } if (autoTimerRef.current) { clearTimeout(autoTimerRef.current); autoTimerRef.current = null; } nextStep(); }}>
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, ease: 'easeOut' }}
+                      className="flex justify-center mt-6"
+                    >
+                      <GlitchButton
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (showTimerRef.current) { clearTimeout(showTimerRef.current); showTimerRef.current = null; }
+                          if (autoTimerRef.current) { clearTimeout(autoTimerRef.current); autoTimerRef.current = null; }
+                          nextStep();
+                        }}
+                      >
                         Next
                       </GlitchButton>
                     </motion.div>
