@@ -38,39 +38,104 @@ const Typewriter = ({ text, speed = 45, delayAfter = 3000, onComplete, onDoneTyp
 
 const epilogueMessages = [
   {
-    text: "Ohh, iya... Gua juga buatin web-pribadi ini special buat 18th birthday lu ini.",
+    text: "Ohh, iya...",
+    delay: 500,
+  },
+  {
+    text: "Ngomong-ngomong soal birthday ke 18.",
+    delay: 2000,
+  },
+  {
+    text: "Menurut gua.",
+    delay: 2000,
+  },
+  {
+    text: "Umur dan birthday ke 18 itu special",
+    delay: 2500, nextButton: { required: true, position: 'below' }
+  },
+  {
+    text: "Karena",
+    delay: 1500,
+  },
+  {
+    text: "Itu tuh fase terpenting dalam hidup",
+    delay: 2000,
+  },
+  {
+    text: "Masa dimana secara resmi, masa kanak-kanak lu berakhir",
+    delay: 2000,
+  },
+  {
+    text: "Ato kasarnya...",
+    delay: 1500,
+  },
+  {
+    text: "Lu uda bukan bocah kemaren sore lagi.",
+    delay: 1500,
+  },
+  {
+    text: "Wkwkwkwk",
+    delay: 1500, nextButton: { required: true, position: 'below' }
+  },
+  {
+    text: "Dan di umur 1 Abad...",
+    delay: 1500,
+  },
+  {
+    text: "Dikurang 8 dekade lebih 2 taun ini",
+    delay: 1500,
+  },
+  {
+    text: "Lu mulai punya hak sekaligus tanggung jawab penuh atas kehidupan lu sendiri",
+    delay: 2500, nextButton: { required: true, position: 'below' }
+  },
+  {
+    text: "Makanya gua bikin web ini...",
+    delay: 1500,
+  },
+  {
+    text: "Special buat birthday ke 18 lu.",
+    delay: 1500,
+  },
+  {
+    text: "Tempat buat lu nyimpen foto-foto berharga atau foto dengan momen-momen penting didalemnya, ketika storage hp lu uda penuh...",
+    delay: 4000,
+  },
+  {
+    text: "At0 sekedar buat bikin diary notes.",
+    delay: 1500, nextButton: { required: true, position: 'below' }
+  },
+  {
+    text: "Kedepannya, mungkin gua bakal nambahin game kuis didalemnya, AI ChatBot, atau beberapa fitur lain yang mungkin bisa berguna buat lu",
     delay: 3500,
   },
   {
-    text: "Dimana, birthday ke 18 itu menurut gua adalah masa atau fase terpenting dalam hidup kita, karena secara resmi itu menandai berakhirnya masa kanak-kanak atau remaja, dan dimulainya fase dewasa.",
-    delay: 4500,
+    text: "(kalo ga sibuk, wkwk).",
+    delay: 2500, nextButton: { required: true, position: 'below' }
   },
   {
-    text: "Dan di umur ini tuh, seseorang mulai punya hak sekaligus tanggung jawab hukum yang penuh atas kehidupannya.",
-    delay: 3500, nextButton: { required: true, position: 'below' }
+    text: "Dan... klo semisalnya kita uda asing pun...",
+    delay: 2500,
+    italic: true,
   },
   {
-    text: "Gua bikin web ini khusus buat lu nyimpen beberapa foto dengan momen-momen yang berharga ato penting buat lu, bikin diary notes...",
-    delay: 4000,
-  },
-  {
-    text: "Dan mungkin, buat update kedepannya gua bakal nambahin game kuis didalemnya, AI ChatBot, atau beberapa fitur lain yang mungkin bisa berguna buat lu (kalo ga sibuk, wkwk).",
-    delay: 4000, nextButton: { required: true, position: 'below' }
-  },
-  {
-    text: "Dan... klo semisalnya kita uda asing... lu bakal tetep dapet birthday greeting secara otomatis lewat notif ato di greeting text yang ada di home page.",
-    delay: 4000,
+    text: "lu bakal tetep dapet birthday greeting secara otomatis lewat notif ato di greeting text yang ada di home page.",
+    delay: 3500,
     italic: true,
     nextButton: { required: true, position: 'below' }
   },
   {
-    text: "Karna mau gimana juga, kita pasti bakal disibukan dengan hal-hal yang gabisa lepas dari hidup kita.",
+    text: "Karna mau gimana pun, kita pasti bakal disibukan dengan urusan masing-masing nantinya.",
     delay: 4000,
     nextButton: { required: true, position: 'below' }
   },
   {
-    text: "Masalah privasi... tenang aja, cuma lu doang kok yang bisa akses web ini, dan gua juga gak bakal ngambil data apapun dari web ini.",
-    delay: 4500,
+    text: "Masalah privasi...",
+    delay: 1500,
+  },
+  {
+    text: "Tenang aja, cuma lu doang kok yang bisa akses web ini, dan gua juga gak bakal ngambil data apapun dari web ini.",
+    delay: 4000,
     nextButton: { required: true, position: 'below' }
   },
   {
