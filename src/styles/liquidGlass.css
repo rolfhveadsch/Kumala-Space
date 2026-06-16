@@ -44,7 +44,7 @@
   animation: blobFloat 28s ease-in-out infinite;
 }
 
-.glass-app > * {
+.glass-app > *:not(.absolute):not(.fixed) {
   position: relative;
   z-index: 1;
 }
