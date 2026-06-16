@@ -1,0 +1,47 @@
+/**
+ * Content Protection — CSS layer
+ * Scoped via .content-protected wrapper (injected by useContentProtection).
+ * Complements JS event blocking; does not replace it.
+ */
+
+.content-protected,
+.content-protected * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.content-protected img,
+.content-protected picture,
+.content-protected video,
+.content-protected svg {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  pointer-events: auto;
+}
+
+.content-protected [data-content-protected-allow],
+.content-protected [data-content-protected-allow] * {
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  -webkit-touch-callout: default;
+}
+
+.content-protected button,
+.content-protected a,
+.content-protected input,
+.content-protected textarea,
+.content-protected select,
+.content-protected summary,
+.content-protected [role="button"] {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}

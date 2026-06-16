@@ -1,0 +1,30 @@
+const { getDriveClient, getDriveClientForUserToken, extractAuthHeaderFromEvent, FOLDER_IDS, handleOptions, verifyGoogleToken, jsonResponse } = require('./_drive.cjs');
+
+exports.handler = async (event) => {
+    const options = handleOptions(event);
+    if (options) return options;
+
+
+    // Auth check - prefer user token, fallback to service account
+    const authHeader = extractAuthHeaderFromEvent(event);
+    const user = authHeader ? await verifyGoogleToken(authHeader) : null;
+    if (!user) console.log('[list-photos] No valid user token, falling back to service account if available');
+
+    try {
+        const drive = user && user.token ? getDriveClientForUserToken(user.token) : await getDriveClient();
+        const q = FOLDER_IDS.photos ? `'${FOLDER_IDS.photos}' in parents and trashed=false` : "mimeType contains 'image/' and trashed=false";
+        const response = await drive.files.list({
+            q,
+            fields: 'files(id, name, createdTime, description, thumbnailLink)',
+            orderBy: 'createdTime desc',
+            pageSize: 100,
+            supportsAllDrives: true,
+            includeItemsFromAllDrives: true,
+        });
+
+        return jsonResponse(200, response.data.files || []);
+    } catch (err) {
+        console.error('List photos error:', err);
+        return jsonResponse(500, { error: err.message });
+    }
+};

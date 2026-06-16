@@ -1,0 +1,167 @@
+/* Global styles + Tailwind v4 theme; imports liquid glass UI layer. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+@import "tailwindcss";
+@import "./styles/liquidGlass.css";
+
+@theme {
+  --breakpoint-xs: 360px;
+  --breakpoint-sm: 390px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --color-brand-lightpink: #F9D0CD;
+  --color-brand-darkborder: #4B3D3F;
+  --color-brand-cardbg: #2D2328;
+  --color-brand-containerbg: #1F181B;
+  --color-brand-pagebg: #191416;
+  --color-brand-hotpink: #F891BB;
+  --color-brand-deeppink: #F13E93;
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(249, 208, 205, 0.12);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(249, 208, 205, 0.22);
+}
+
+/* TipTap editor styles */
+.tiptap-editor {
+  outline: none;
+  min-height: 100%;
+  padding: 0.5rem 0;
+  line-height: 1.8;
+  color: #c4adb0;
+  font-size: 1rem;
+}
+
+.tiptap-editor p {
+  margin: 0.5rem 0;
+}
+
+.tiptap-editor h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #F9D0CD;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.tiptap-editor h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e8c8c5;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.tiptap-editor h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #d9b8b5;
+  margin: 1rem 0 0.5rem;
+}
+
+.tiptap-editor strong {
+  color: #F9D0CD;
+  font-weight: 600;
+}
+
+.tiptap-editor em {
+  font-style: italic;
+}
+
+.tiptap-editor s {
+  text-decoration: line-through;
+  color: #7a6365;
+}
+
+.tiptap-editor code {
+  background: #2D2328;
+  color: #F891BB;
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: monospace;
+  font-size: 0.875em;
+}
+
+.tiptap-editor blockquote {
+  border-left: 3px solid #4B3D3F;
+  padding-left: 1rem;
+  color: #7a6365;
+  margin: 1rem 0;
+}
+
+.tiptap-editor hr {
+  border: none;
+  border-top: 1px solid #4B3D3F;
+  margin: 1.5rem 0;
+}
+
+.tiptap-editor ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.tiptap-editor ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.tiptap-editor li {
+  margin: 0.25rem 0;
+}
+
+.tiptap-editor p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: #4B3D3F;
+  pointer-events: none;
+  float: left;
+  height: 0;
+}
+
+body {
+  margin: 0;
+  background-color: #0d0a0b;
+  color: #ededed;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glass-text {
+  background: linear-gradient(to bottom,
+      #ffffff 0%,
+      #e0e0e0 26%,
+      #999999 46%,
+      #222222 50%,
+      #aaaaaa 54%,
+      #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+  filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.7));
+}
+
+.safe-bottom {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+.safe-top {
+  padding-top: max(1rem, env(safe-area-inset-top));
+}
