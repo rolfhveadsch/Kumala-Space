@@ -77,15 +77,17 @@ function GreetingHero() {
   const { displayed, done } = useTypewriter(greeting);
 
   return (
-    <div className="flex items-center justify-center gap-3 md:gap-4 px-4 py-4 w-full overflow-hidden">
+    <div className="flex items-center justify-center w-full px-4 py-4 overflow-hidden">
       <h1
-        className="font-cormorant font-semibold text-[#F9D0CD] tracking-wider leading-relaxed whitespace-nowrap min-w-0"
-        style={{ fontSize: 'clamp(1.4rem, 4vw, 4rem)' }}
+        className="font-cormorant font-semibold text-[#F9D0CD] tracking-wider leading-relaxed truncate max-w-full"
+        // Tambahkan 'truncate' (yg isinya overflow: hidden; text-overflow: ellipsis; white-space: nowrap;)
+        // Tambahkan 'max-w-full' agar tidak melebih container
+        style={{ fontSize: 'clamp(1.2rem, 5vw, 3rem)' }} 
       >
         {displayed}
-        {!done && (
-          <span className="inline-block w-[2px] h-[0.85em] bg-[#F891BB] ml-1 align-middle animate-pulse" />
-        )}
+        <span 
+          className={`inline-block w-[2px] h-[0.85em] bg-[#F891BB] ml-1 align-middle transition-opacity duration-300 ${done ? 'opacity-0' : 'animate-pulse'}`} 
+        />
       </h1>
     </div>
   );
