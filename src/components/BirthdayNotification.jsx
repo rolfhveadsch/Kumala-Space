@@ -12,9 +12,9 @@ import {
 } from '../utils/birthdayDate';
 
 const GREETING = {
-  title: 'Yooo happy bday JIWA!! 🎂',
-  body: "Lu udah 18 tahun cuyyy, literally that's insane. It's your day, enjoy it to the fullest ya — Semoga semua apa yang lu semogakan tercapai fr fr ✨",
-  sub: "It's giving birthday vibes — go slay the whole day!",
+  title: 'Hii, Gua adalah gua',
+  body: "Lu mau tau kgak ni apaan",
+  sub: "Mana gua tau jird???",
 };
 
 export default function BirthdayNotification() {
@@ -51,7 +51,7 @@ export default function BirthdayNotification() {
             onClick={(e) => e.stopPropagation()}
           >
             <span className="text-4xl mb-4 block animate-bounce" aria-hidden="true">
-              🎂✨🌸
+              🙄
             </span>
             <h2
               id="bday-notif-title"
@@ -70,7 +70,7 @@ export default function BirthdayNotification() {
               onClick={dismiss}
               className="w-full py-3.5 rounded-xl border border-[#F891BB]/40 bg-[#F891BB]/15 hover:bg-[#F891BB]/25 text-[#F9D0CD] font-semibold text-sm tracking-wide transition-all duration-200 cursor-pointer"
             >
-              Gas, makasih bre! 🎉
+              Apaan dah?
             </button>
           </motion.div>
         </div>

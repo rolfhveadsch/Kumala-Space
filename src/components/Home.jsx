@@ -37,12 +37,12 @@ const BirthdayBanner = ({ mobile = false }) => (
   >
     <span className={`block animate-bounce ${mobile ? 'text-2xl mb-1' : 'text-3xl mb-2'}`}>🎂✨🌸</span>
     <h2 className={`font-bold text-white ${mobile ? 'text-base mb-0.5' : 'text-lg md:text-2xl mb-1'}`}>
-      Yooo happy bday Kumala!! 🎉
+      Happy bday Kumala!! 🎉
     </h2>
     <p className={`text-[#F9D0CD]/70 leading-relaxed ${mobile ? 'text-[11px]' : 'text-xs md:text-sm max-w-xl mx-auto'}`}>
       {mobile
-        ? "It's your day bestie — semoga semua mimpi lu tercapai fr fr 💖"
-        : "It's giving birthday vibes today! Semoga semua mimpi lu tercapai, dan lu selalu dikelilingi good energy di umur baru ini 💖"}
+        ? "It's your day bestie — semoga semua mimpi lu tercapai fr fr "
+        : "It's giving birthday vibes today! Semoga semua mimpi lu tercapai, dan lu selalu dikelilingi good energy di umur baru ini "}
     </p>
   </motion.div>
 );
@@ -63,7 +63,7 @@ const DesktopLayout = ({ isBirthdayToday: isBday, timeLeft, loading, photos, des
         {!isBday && (
           <div className="shrink-0 glass-card p-4 md:p-5">
             <p className="text-center text-[9px] md:text-[10px] font-bold text-[#7a6570] tracking-[0.18em] uppercase mb-3 md:mb-4">
-              Countdown ke 18 Juni — mark your calendar bre
+              Countdown ke 18 Juni — mark your calendar cuyy
             </p>
             <div className="flex gap-2 md:gap-3">
               <CountBox value={timeLeft.days} label="Day" />
