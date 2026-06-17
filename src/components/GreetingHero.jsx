@@ -14,7 +14,7 @@ const BIRTHDAY_GREETINGS = [
   "It's giving birthday vibes fr fr 🎂",
   'Yooo, happy bday!! Lu deserve the world today',
   'Literally your day — go slay, kagak ada yang bisa halangin lu',
-  "18 tahun xuy, that's actually insane. Enjoy every sec!",
+  "18 tahun cuyyy, that's actually insane. Enjoy every sec!",
 ];
 
 const GREETING_TTL = 3 * 60 * 60 * 1000;
