@@ -12,8 +12,8 @@ import {
 } from '../utils/birthdayDate';
 
 const GREETING = {
-  title: 'Yooo happy bday bestie!! 🎂',
-  body: "Lu udah 18 tahun bro, literally that's insane. It's your day, enjoy it to the fullest ya — kagak ada yang bisa stop lu sekarang! Semoga semua mimpi lu tercapai fr fr ✨",
+  title: 'Yooo happy bday JIWA!! 🎂',
+  body: "Lu udah 18 tahun cuyyy, literally that's insane. It's your day, enjoy it to the fullest ya — Semoga semua apa yang lu semogakan tercapai fr fr ✨",
   sub: "It's giving birthday vibes — go slay the whole day!",
 };
 
