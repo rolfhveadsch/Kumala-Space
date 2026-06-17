@@ -77,12 +77,12 @@ function GreetingHero() {
   const { displayed, done } = useTypewriter(greeting);
 
   return (
-    <div className="flex items-center justify-center w-full px-4 py-4 overflow-hidden">
+    <div className="flex items-center justify-center w-full px-4 py-4">
       <h1
-        className="font-cormorant font-semibold text-[#F9D0CD] tracking-wider leading-relaxed truncate max-w-full"
-        // Tambahkan 'truncate' (yg isinya overflow: hidden; text-overflow: ellipsis; white-space: nowrap;)
-        // Tambahkan 'max-w-full' agar tidak melebih container
-        style={{ fontSize: 'clamp(1.2rem, 5vw, 3rem)' }} 
+        // Hapus 'whitespace-nowrap' dan 'truncate'
+        // Tambahkan 'text-center' agar teks rata tengah saat turun ke bawah
+        className="font-cormorant font-semibold text-[#F9D0CD] tracking-wider leading-relaxed text-center max-w-[90%]"
+        style={{ fontSize: 'clamp(1.4rem, 5vw, 3rem)' }}
       >
         {displayed}
         <span 
