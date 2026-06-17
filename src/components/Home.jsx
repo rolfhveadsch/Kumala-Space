@@ -35,7 +35,7 @@ const BirthdayBanner = ({ mobile = false }) => (
     exit={{ opacity: 0, y: -12 }}
     className={`glass-card-accent shrink-0 text-center ${mobile ? 'mx-3 mt-2 p-4' : 'mx-0 mt-0 mb-4 p-5'}`}
   >
-    <span className={`block animate-bounce ${mobile ? 'text-2xl mb-1' : 'text-3xl mb-2'}`}>🎂✨🌸</span>
+    <span className={`block animate-bounce ${mobile ? 'text-2xl mb-1' : 'text-3xl mb-2'}`}>HBD</span>
     <h2 className={`font-bold text-white ${mobile ? 'text-base mb-0.5' : 'text-lg md:text-2xl mb-1'}`}>
       Happy bday Kumala!! 🎉
     </h2>
