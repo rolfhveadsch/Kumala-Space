@@ -37,115 +37,36 @@ const Typewriter = ({ text, speed = 45, delayAfter = 3000, onComplete, onDoneTyp
 };
 
 const epilogueMessages = [
-  {
-    text: "Ohh, iya...",
-    delay: 500,
+  { text: "Ohh, iya...", delay: 500 },
+  { text: "Ngomong-ngomong soal birthday ke 18.", delay: 2000 },
+  { text: "Menurut gua.", delay: 2000 },
+  { 
+    text: "Umur dan birthday ke 18 itu special", 
+    delay: 2500, 
+    nextButton: { required: true, position: 'below', text: "Kenapa?" } 
   },
-  {
-    text: "Ngomong-ngomong soal birthday ke 18.",
-    delay: 2000,
-  },
-  {
-    text: "Menurut gua.",
-    delay: 2000,
-  },
-  {
-    text: "Umur dan birthday ke 18 itu special",
-    delay: 2500, nextButton: { required: true, position: 'below' }
-  },
-  {
-    text: "Karena",
-    delay: 1500,
-  },
-  {
-    text: "Itu tuh fase terpenting dalam hidup",
-    delay: 2000,
-  },
-  {
-    text: "Masa dimana secara resmi, masa kanak-kanak lu berakhir",
-    delay: 2000,
-  },
-  {
-    text: "Ato kasarnya...",
-    delay: 1500,
-  },
-  {
-    text: "Lu uda bukan bocah kemaren sore lagi.",
-    delay: 1500,
-  },
-  {
-    text: "Wkwkwkwk",
-    delay: 1500, nextButton: { required: true, position: 'below' }
-  },
-  {
-    text: "Dan di umur 1 Abad...",
-    delay: 1500,
-  },
-  {
-    text: "Dikurang 8 dekade lebih 2 taun ini",
-    delay: 1500,
-  },
-  {
-    text: "Lu mulai punya hak sekaligus tanggung jawab penuh atas kehidupan lu sendiri",
-    delay: 2500, nextButton: { required: true, position: 'below' }
-  },
-  {
-    text: "Makanya gua bikin web ini...",
-    delay: 1500,
-  },
-  {
-    text: "Special buat birthday ke 18 lu.",
-    delay: 1500,
-  },
-  {
-    text: "Tempat buat lu nyimpen foto-foto berharga atau foto dengan momen-momen penting didalemnya, ketika storage hp lu uda penuh...",
-    delay: 4000,
-  },
-  {
-    text: "At0 sekedar buat bikin diary notes.",
-    delay: 1500, nextButton: { required: true, position: 'below' }
-  },
-  {
-    text: "Kedepannya, mungkin gua bakal nambahin game kuis didalemnya, AI ChatBot, atau beberapa fitur lain yang mungkin bisa berguna buat lu",
-    delay: 3500,
-  },
-  {
-    text: "(kalo ga sibuk, wkwk).",
-    delay: 2500, nextButton: { required: true, position: 'below' }
-  },
-  {
-    text: "Dan... klo semisalnya kita uda asing pun...",
-    delay: 2500,
-    italic: true,
-  },
-  {
-    text: "lu bakal tetep dapet birthday greeting secara otomatis lewat notif ato di greeting text yang ada di home page.",
-    delay: 3500,
-    italic: true,
-    nextButton: { required: true, position: 'below' }
-  },
-  {
-    text: "Karna mau gimana pun, kita pasti bakal disibukan dengan urusan masing-masing nantinya.",
-    delay: 4000,
-    nextButton: { required: true, position: 'below' }
-  },
-  {
-    text: "Masalah privasi...",
-    delay: 1500,
-  },
-  {
-    text: "Tenang aja, cuma lu doang kok yang bisa akses web ini, dan gua juga gak bakal ngambil data apapun dari web ini.",
-    delay: 4000,
-    nextButton: { required: true, position: 'below' }
-  },
-  {
-    text: "Dah, gitu aja sih dari gua.",
-    delay: 2500,
-  },
-  {
-    text: "Sekali lagi...",
-    delay: 2500,
-  },
+  { text: "Karena", delay: 1500 },
+  { text: "Itu tuh fase terpenting dalam hidup", delay: 2000 },
+  { text: "Masa dimana secara resmi, masa kanak-kanak lu berakhir", delay: 2000 },
+  { text: "Ato kasarnya...", delay: 1500 },
+  { text: "Lu uda bukan bocah kemaren sore lagi.", delay: 1500 },
+  { text: "Wkwkwkwk", delay: 1500, nextButton: { required: true, position: 'below' } },
+  { text: "Dan di umur 1 Abad...", delay: 1500 },
+  { text: "Dikurang 8 dekade lebih 2 taun ini", delay: 1500 },
+  { text: "Lu mulai punya hak sekaligus tanggung jawab penuh atas kehidupan lu sendiri", delay: 2500, nextButton: { required: true, position: 'below' } },
+  { text: "Makanya gua bikin web ini...", delay: 1500 },
+  { text: "Special buat birthday ke 18 lu.", delay: 1500 },
+  { text: "Tempat buat lu nyimpen foto-foto berharga atau foto dengan momen-momen penting didalemnya, ketika storage hp lu uda penuh...", delay: 4000 },
+  { text: "At0 sekedar buat bikin diary notes.", delay: 1500, nextButton: { required: true, position: 'below' } },
+  { text: "Kedepannya, mungkin gua bakal nambahin game kuis didalemnya, AI ChatBot, atau beberapa fitur lain yang mungkin bisa berguna buat lu", delay: 3500 },
+  { text: "(kalo ga sibuk, wkwk).", delay: 2500, nextButton: { required: true, position: 'below' } },
+  { text: "Dan... klo semisalnya kita uda asing pun...", delay: 2500, italic: true },
+  { text: "lu bakal tetep dapet birthday greeting secara otomatis lewat notif ato di greeting text yang ada di home page.", delay: 3500, italic: true, nextButton: { required: true, position: 'below' } },
+  { text: "Karna mau gimana pun, kita pasti bakal disibukan dengan urusan masing-masing nantinya.", delay: 4000, nextButton: { required: true, position: 'below' } },
+  { text: "Masalah privasi...", delay: 1500 },
+  { text: "Tenang aja, cuma lu doang kok yang bisa akses web ini, dan gua juga gak bakal ngambil data apapun dari web ini.", delay: 4000, nextButton: { required: true, position: 'below' } },
+  { text: "Dah, gitu aja sih dari gua.", delay: 2500 },
+  { text: "Sekali lagi...", delay: 2500 },
 ];
 
 function Epilogue({ next, nextButtonPosition = 'below', nextButtonsEnabled = false }) {
@@ -155,7 +76,6 @@ function Epilogue({ next, nextButtonPosition = 'below', nextButtonsEnabled = fal
   const showTimerRef = useRef(null);
   const navigate = useNavigate();
 
-  // Reset typed state dan cleanup timer saat step berganti
   useEffect(() => {
     setTyped(false);
     return () => {
@@ -165,7 +85,7 @@ function Epilogue({ next, nextButtonPosition = 'below', nextButtonsEnabled = fal
   }, [step]);
 
   const nextStep = () => {
-    setTyped(false); // reset sebelum ganti step
+    setTyped(false);
     setStep((s) => s + 1);
   };
 
@@ -175,9 +95,7 @@ function Epilogue({ next, nextButtonPosition = 'below', nextButtonsEnabled = fal
   };
 
   return (
-    <div
-      className="text-center px-6 w-full max-w-3xl flex flex-col items-center justify-center min-h-[60vh] font-cormorant"
-    >
+    <div className="text-center px-6 w-full max-w-3xl flex flex-col items-center justify-center min-h-[60vh] font-cormorant">
       <AnimatePresence mode="wait">
         {step < epilogueMessages.length && (
           <motion.div
@@ -196,8 +114,6 @@ function Epilogue({ next, nextButtonPosition = 'below', nextButtonsEnabled = fal
                 suppressAutoAdvance={true}
                 onDoneTyping={() => {
                   if (showTimerRef.current) { clearTimeout(showTimerRef.current); showTimerRef.current = null; }
-
-                  // Tampilkan button 2500ms setelah typewriter selesai
                   showTimerRef.current = setTimeout(() => {
                     showTimerRef.current = null;
                     setTyped(true);
@@ -214,51 +130,46 @@ function Epilogue({ next, nextButtonPosition = 'below', nextButtonsEnabled = fal
                 }}
               />
 
-              {/* per-message next button */}
               {(() => {
-                const position = epilogueMessages[step].nextButton?.position ?? nextButtonPosition;
-                const requiresNext = Boolean(epilogueMessages[step].nextButton?.required ?? nextButtonsEnabled);
+                const config = epilogueMessages[step].nextButton;
+                const position = config?.position ?? nextButtonPosition;
+                const requiresNext = Boolean(config?.required ?? nextButtonsEnabled);
+                const buttonLabel = config?.text ?? "Next"; // Ambil teks kustom atau default
                 const showNext = typed && requiresNext;
-                if (position === 'overlay-right' && showNext) {
+
+                if (!showNext) return null;
+
+                const buttonContent = (
+                  <GlitchButton
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (showTimerRef.current) { clearTimeout(showTimerRef.current); showTimerRef.current = null; }
+                      if (autoTimerRef.current) { clearTimeout(autoTimerRef.current); autoTimerRef.current = null; }
+                      nextStep();
+                    }}
+                  >
+                    {buttonLabel}
+                  </GlitchButton>
+                );
+
+                if (position === 'overlay-right') {
                   return (
-                    <GlitchButton
-                      initial={{ opacity: 0, y: 10, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      transition={{ duration: 0.45, ease: 'easeOut' }}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        if (showTimerRef.current) { clearTimeout(showTimerRef.current); showTimerRef.current = null; }
-                        if (autoTimerRef.current) { clearTimeout(autoTimerRef.current); autoTimerRef.current = null; }
-                        nextStep();
-                      }}
-                      className="absolute top-2.5 right-2.5"
-                    >
-                      Next
-                    </GlitchButton>
+                    <div className="absolute top-2.5 right-2.5">
+                      {buttonContent}
+                    </div>
                   );
                 }
-                if (position !== 'overlay-right' && showNext) {
-                  return (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, ease: 'easeOut' }}
-                      className="flex justify-center mt-6"
-                    >
-                      <GlitchButton
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          if (showTimerRef.current) { clearTimeout(showTimerRef.current); showTimerRef.current = null; }
-                          if (autoTimerRef.current) { clearTimeout(autoTimerRef.current); autoTimerRef.current = null; }
-                          nextStep();
-                        }}
-                      >
-                        Next
-                      </GlitchButton>
-                    </motion.div>
-                  );
-                }
-                return null;
+                
+                return (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: 'easeOut' }}
+                    className="flex justify-center mt-6"
+                  >
+                    {buttonContent}
+                  </motion.div>
+                );
               })()}
             </div>
           </motion.div>
