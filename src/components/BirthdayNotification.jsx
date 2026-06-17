@@ -13,7 +13,7 @@ import {
 
 const GREETING = {
   title: 'Hii, Gua adalah gua',
-  body: "Lu mau tau kgak ni apaan",
+  body: "Lu tau kgak ni apaan",
   sub: "Mana gua tau jird???",
 };
 
